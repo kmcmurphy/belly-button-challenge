@@ -75,14 +75,12 @@ Plotly.newPlot("bar", OTUData, layout);
 
 //console.log(selectedUserSampleValues)
 
-
 //Output the bubble graph
 
 let trace2 = {
     x: selectedUserOTUIDs,
     y: selectedUserSampleValues,
-    annotations:[{
-    text: selectedUserOTULabels}],
+    text: selectedUserOTULabels,
     mode: "markers",
     marker:{
     size: selectedUserSampleValues,
@@ -137,19 +135,9 @@ let gaugeData = [
 ];
 
 
-let layout3 = { 
-    width: 600, 
-    height: 500, 
-    margin: { 
-        t: 0, 
-        b: 0 }, 
+Plotly.newPlot('gauge', gaugeData);
 
-    };
-
-
-Plotly.newPlot('gauge', gaugeData, layout3);
-
-console.log(myUser2.wfreq)
+//console.log(myUser2.wfreq)
 
 });
 }
@@ -159,7 +147,7 @@ let currID = 940;
 init(currID)
 
 
-
+// Create event handler to capture menu selection
 function optionChanged(){
     let menu = d3.select("#selDataset");
     let currID = menu.property("value");
